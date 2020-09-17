@@ -1,0 +1,23 @@
+html{
+    min-height:100%
+}
+
+.fromBackground{
+    background-color: #fff;
+    width: 300px;
+    height:400px
+
+}
+
+.image{
+    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(../../Image/Rectangle1.png);
+    background-size: cover;
+    font-family: 'Ubuntu', sans-serif;
+    color:#fff;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow-x: hidden;
+    
+}
+

@@ -1,0 +1,106 @@
+.image{
+    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(../../Image/Rectangle1.png);
+    background-size: cover;
+    font-family: 'Ubuntu', sans-serif;
+    color:#fff;
+    background-repeat: no-repeat;
+    height:100vh;
+}
+
+
+@media only screen and (max-width: 1169px) {
+    .image {
+      height:100%;
+    }
+  }
+ 
+  @media only screen and (max-width: 1169px) {
+    .picture {
+      margin-bottom:25px;
+      
+    }
+  }
+  /* .picture {
+    height:416px;
+    width: 270px;
+    background-image: url(https://i.imgur.com/C5OIM9N.png);
+    background-size: cover;} */
+
+  #pictureOne {
+    height:416px;
+    width: 270px;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+    /* background-image: url(https://i.imgur.com/C5OIM9N.png); */
+    background-size:cover;
+    text-align: center;
+    
+   
+  }
+  #pictureOne:hover, .picture:focus, .picture:active {
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    border:2px solid orange;
+    border-radius: 20px;
+  }
+  #pictureTwo {
+    height:416px;
+    width: 270px;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+    background-image: url(https://i.imgur.com/2tMqPfR.png);
+    background-size:cover;
+    text-align: center;
+    color:black
+    
+    
+   
+  }
+  #pictureTwo:hover, .picture:focus, .picture:active {
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    border:2px solid orange;
+    border-radius: 20px;
+  }
+
+  #pictureThree {
+    height:416px;
+    width: 270px;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+    background-image: url(https://i.imgur.com/edBLhBT.png);
+    background-size:cover;
+    text-align: center;
+    
+   
+  }
+  #pictureThree:hover, .picture:focus, .picture:active {
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    border:2px solid orange;
+    border-radius: 20px;
+  }
