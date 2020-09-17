@@ -1,21 +1,27 @@
-import React from 'react';
-import {Link, useParams} from 'react-router-dom';
+import React, { useState } from 'react';
+import {Link, useHistory, useParams} from 'react-router-dom';
 import "./Booking.css"
 import destination from '../../destination/destination';
 const Booking = () => {
     
     const {id} = useParams()
+    const history = useHistory()
+    const [validate, setValidate] = useState("")
+    const handleClick = () => {
+        validate && history.push("/hotel");
+      }
+    
 
-    const selectedDestination = destination.find(n => n.id === id)
-    console.log(selectedDestination)
+    const selectedDestination = destination.find(dest => dest.id == id);
+    const {name, description} = selectedDestination;
     
     
     return (
         <div className="image row" >
             <div className="col-5 ml-5 mt-5">
                 <blockquote className='col ml-3'>
-                    <h1 className=''>Cox's Bazar</h1>
-                    <p>Cox's Bazar is a city, fishing port, tourism centre and district headquarters in southeastern Bangladesh. It is famous mostly for its long natural sandy beach, and it obviously longest beach</p>
+                    <h1 className=''>{name}</h1>
+                    <p>{description}</p>
                     
                 </blockquote>
             </div>
@@ -23,24 +29,24 @@ const Booking = () => {
                 <form>
                     <div className="form-group">
                         <label htmlFor="Origin">Origin</label>
-                        <input type="text" className="form-control" id="Origin" placeholder="Dhaka" />
+                        <input onChange={(e)=>setValidate(e.target.value)} type="text" className="form-control" id="Origin" placeholder="Dhaka" value={validate} required/>
                     </div>
                     <div className="form-group">
                         <label htmlFor="Destination">Destination</label>
-                        <input type="text" className="form-control" id="Destination" placeholder="Cox's Bazar" />
+                        <input type="text" className="form-control" id="Destination" placeholder="Cox's Bazar" required/>
                     </div>
                     <div className="row ">
                         <div className="form-group col">
                             <label htmlFor="from">From</label>
-                            <input type="date" className="form-control" id="from"/>
+                            <input type="date" className="form-control" id="from" required/>
                         </div>
                         <div className="form-group col">
                             <label htmlFor="from">To</label>
-                            <input type="date" className="form-control" id="from"/>
+                            <input type="date" className="form-control" id="from" required/>
                         </div>
                     </div>
                    
-                    <Link to="/hotel"><button type="submit" className="btn btn-warning">Booking now</button></Link>
+                    <button type="submit" onClick={handleClick} className="btn btn-warning">Booking now</button>
                 </form>
                 
 

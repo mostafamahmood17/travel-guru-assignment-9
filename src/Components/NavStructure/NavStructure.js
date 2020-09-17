@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { TravelContext } from '../../App';
 import logo from "../../Logo.png"
 
 const NavStructure = () => {
+    const [loggedInUser, setLoggedInUser ] = useContext(TravelContext)
     return (
         <div>
              <nav className="navbar navbar-expand-lg transparent container fluid">
@@ -17,21 +19,27 @@ const NavStructure = () => {
                            <input className="form-control " type="search" placeholder="Destination Search" aria-label="Search"/>
                          </form>
                         </li>
-                        <li className="nav-item active ml-5">
+                        <li className="nav-item active ml-3">
                             <a className="nav-link text-dark" href="#">News<span className="sr-only">(current)</span></a>
                         </li>
-                        <li className="nav-item ml-5">
+                        <li className="nav-item ml-3">
                             <a className="nav-link text-dark" href="#">Destination</a>
                         </li>
-                        <li className="nav-item ml-5">
+                        <li className="nav-item ml-3">
                             <a className="nav-link text-dark" href="#">Blog</a>
                         </li>
-                        <li className="nav-item ml-5">
+                        <li className="nav-item ml-3">
                             <a className="nav-link text-dark" href="#">Contact</a>
                         </li>
                         <li className="nav-item">
-                            <Link to="/login"><button className="ml-5 btn btn-warning text-dark" href="#">Log In</button></Link>
+                            {
+                            loggedInUser.name? loggedInUser.name : <Link to="/login"><button className="ml-5 btn btn-warning text-dark" href="#">Log In</button></Link>
+                            }
+                            {/* <Link to="/login"><button className="ml-5 btn btn-warning text-dark" href="#">Log In</button></Link> */}
                         </li> 
+                        <li className="nav-item">
+                        <button className="ml-5 btn btn-warning text-dark" onClick={()=>setLoggedInUser({})}>Sign Out</button>
+                        </li>
                     </ul>
                 </div> 
             </nav>

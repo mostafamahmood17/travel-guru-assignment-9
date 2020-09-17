@@ -19,8 +19,6 @@ function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
   return (
     <TravelContext.Provider value = {[loggedInUser, setLoggedInUser]}>
-
-    <h3>email: {loggedInUser.email}</h3>
     <Router>
         <NavStructure></NavStructure>
         <Switch>
