@@ -4,7 +4,7 @@ import image from '../../Image/Rectangle1.png'
 const NoMatch = () => {
     const noMatchStyle={
         
-            backgroundImage: `url(${image})`,
+            backgroundImage:`url(${image})`,
             backgroundSize: "cover",
             fontFamily: "'Ubuntu', sans-serif",
             color:"#fff",

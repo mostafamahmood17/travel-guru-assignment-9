@@ -76,20 +76,16 @@ function LogIn() {
     let isFieldValid = true;
     if (e.target.name === 'email') {
       isFieldValid = /\S+@\S+.\S+/.test(e.target.value)
+      !isFieldValid && alert("format = demo@example.com")
 
     }
     if (e.target.name === "password") {
       const isPasswordValid = e.target.value.length > 6;
       const passwordHasNumber = /\d{1}/.test(e.target.value);
       isFieldValid = isPasswordValid && passwordHasNumber
+      !isFieldValid && alert("Password should be 6 character and one number")
     }
-    // if (e.target.name === "passwordTwo") {
-    //   let passOne = e.target.name === "password";
-    //   let passTwo = e.target.name === "passwordTwo";
-    //   const isPasswordValid = passOne !== passTwo;
-    //   const passwordHasNumber = /\d{1}/.test(e.target.value);
-    //   isFieldValid = isPasswordValid && passwordHasNumber
-    // }
+   
     if (isFieldValid) {
       const newUserInfo = { ...user };
       newUserInfo[e.target.name] = e.target.value;
@@ -119,6 +115,7 @@ function LogIn() {
 
 
   return (
+    // log in / sign in page
     <div style={logInStyle}>
 
       {newUser ? <h2>Create new account</h2> : <h2>Log In</h2>}
@@ -129,7 +126,6 @@ function LogIn() {
         <br />
         <input style={inputStyle} type="password" name="password" onBlur={handleBlur} placeholder="Your password" required />
         <br />
-        {/* {newUser && <input style={inputStyle} type="passwordTwo" name="password" onBlur={handleBlur} placeholder="Confirm Password" required/>} */}
        <br/>
         <input className="btn btn-outline-primary mt-1" style={inputStyle} type="submit" value={newUser ? 'sign up' : 'sign in'} />
         <br />

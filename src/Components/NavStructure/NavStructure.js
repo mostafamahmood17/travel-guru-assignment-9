@@ -22,9 +22,6 @@ const NavStructure = () => {
                            <input className="form-control " type="search" placeholder="Destination Search" aria-label="Search"/>
                          </form>
                         </li>
-                        {/* <li className="nav-item active ml-3">
-                            <p className="nav-link text-dark" href="/">News<span className="sr-only">(current)</span></p>
-                        </li> */}
                         <li className="nav-item ml-5">
                             <Link to="/" className="nav-link text-dark">Destination</Link>
                         </li>

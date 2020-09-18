@@ -5,7 +5,6 @@ import '../Header/Header.css'
 
 const DestinationPicture = (props) => {
     
-
     let history = useHistory();
     const {id, name, image} = props.dest
 
@@ -17,7 +16,6 @@ const DestinationPicture = (props) => {
     const picStyle = {
         backgroundImage: `url(${image}`
     }
-    
     
 
     return (

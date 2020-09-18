@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {useHistory, useParams} from 'react-router-dom';
 import "./Booking.css"
 import destination from '../../destination/destination';
@@ -11,12 +11,13 @@ const Booking = () => {
         validate && history.push(`/hotel/${id}`);
       }
     
-
     const selectedDestination = destination.find(dest => dest.id == id);
     const {name, description} = selectedDestination;
     
     
     return (
+
+        // booking page
         <div className="image row" >
             <div className="col-5 ml-5 mt-5">
                 <blockquote className='col ml-3'>

@@ -15,6 +15,7 @@ const HotelBooking = () => {
    
     
     return (
+      // creating the hotel and google map page
         <div>
            <hr width="75%"/>
            <h2 className="text-bark text-center">welcome to Travel Guru</h2>
@@ -31,7 +32,7 @@ const HotelBooking = () => {
          
             <div className="col row-md-8">
             
-              <GoogleMap></GoogleMap>
+            <GoogleMap></GoogleMap>
               
            </div>
          </div>   

@@ -21,10 +21,10 @@ function App() {
       <Router>
         <NavStructure></NavStructure>
         <Switch>
-          <PrivateRoute path="/hotel/:id">
+          <PrivateRoute exact path="/hotel/:id">
             <HotelBooking/>
           </PrivateRoute>
-          <Route path="/booking/:id">
+          <Route exact path="/booking/:id">
             <Booking/>
           </Route>
           <Route path="/home">

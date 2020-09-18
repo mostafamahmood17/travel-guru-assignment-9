@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 const mapStyles = {
-    width: "400px",
-    height: '500px',
-    marginTop:"150px"
+    width: "70%",
+    height: '70%',
+    marginTop:"130px"
   };
-
+// google map create
 class GoogleMap extends Component {
     constructor(props) {
     super(props);
