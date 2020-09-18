@@ -2,8 +2,7 @@ import React, { createContext, useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Booking from './Components/Booking/Booking';
 import Header from './Components/Header/Header';
@@ -18,33 +17,34 @@ export const TravelContext = createContext();
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
   return (
-    <TravelContext.Provider value = {[loggedInUser, setLoggedInUser]}>
-    <Router>
+    <TravelContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <Router>
         <NavStructure></NavStructure>
         <Switch>
-           <PrivateRoute path="/hotel">
-             <HotelBooking></HotelBooking>
-           </PrivateRoute>
-           <Route path="/booking/:id">
-             <Booking></Booking>
-           </Route>
-           <Route path="/home">
-            <Header></Header>
-           </Route>
-           <Route exact path="/">
-            <Header></Header>
-            </Route>
-           <Route path="/login">
-           <LogIn></LogIn>
+          <PrivateRoute path="/hotel/:id">
+            <HotelBooking/>
+          </PrivateRoute>
+          <Route path="/booking/:id">
+            <Booking/>
+          </Route>
+          <Route path="/home">
+            <Header/>
+          </Route>
+          <Route exact path="/">
+            <Header/>
+          </Route>
+          <Route path="/login">
+            <LogIn/>
           </Route>
           <Route path="*">
-          <NoMatch/>
-        </Route>
-      </Switch>
-     </Router>
+            <NoMatch/>
+          </Route>
+        </Switch>
+      </Router>
     </TravelContext.Provider>
 
   );
 }
 
 export default App;
+

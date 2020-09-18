@@ -35,12 +35,16 @@ export const handleFBLogin = () =>{
       .then(result => {
         const user = result.user;
         user.success = true;
+        user.name = result.user.displayName;
+        // user.email = result.user.email;
+        
+        
         return user;
       }).catch(error => {
-        const errorCode = error.code;
         const errorMessage = error.message;
         const email = error.email;
-        const credential = error.credential;
+        console.log(email)
+        console.log(errorMessage)
       });
     }
 // sign out
@@ -64,15 +68,16 @@ export const handleSignOut = ()=>{
       export const createUserWithEmailAndPassword = (name, email, password) => {
        return firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(res => {
-         const newUserInfo = res.user;
+   const newUserInfo = res.user;
          newUserInfo.error = "";
          newUserInfo.success =true;
+         newUserInfo.name = name;
          updateUserName(name) ;
          return newUserInfo;
     
         })
         .catch(error => {
-          const newUserInfo = {}
+    const newUserInfo = {}
           newUserInfo.success =false;
           newUserInfo.error=error.message
           return newUserInfo;
@@ -82,7 +87,7 @@ export const handleSignOut = ()=>{
       export const signInWithEmailAndPassword = (email, password) => {
         return firebase.auth().signInWithEmailAndPassword(email, password)
         .then(res=>{
-          const newUserInfo=res.user;
+   const newUserInfo=res.user;
          newUserInfo.error = "";
          newUserInfo.success =true;
          newUserInfo.name = res.user.displayName;
@@ -90,7 +95,7 @@ export const handleSignOut = ()=>{
          
         })
          .catch(error=> {
-          const newUserInfo = {}
+    const newUserInfo = {}
           newUserInfo.success =false;
           newUserInfo.error=error.message
           return newUserInfo;
@@ -98,8 +103,10 @@ export const handleSignOut = ()=>{
         });
       }
 // update name
-      const updateUserName = name=>{
-        var user = firebase.auth().currentUser;
+      const updateUserName = name =>{
+        console.log(name)
+
+        const user = firebase.auth().currentUser;
     
         user.updateProfile({
           displayName: name,

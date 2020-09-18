@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Link, useHistory, useParams} from 'react-router-dom';
+import {useHistory, useParams} from 'react-router-dom';
 import "./Booking.css"
 import destination from '../../destination/destination';
 const Booking = () => {
@@ -8,7 +8,7 @@ const Booking = () => {
     const history = useHistory()
     const [validate, setValidate] = useState("")
     const handleClick = () => {
-        validate && history.push("/hotel");
+        validate && history.push(`/hotel/${id}`);
       }
     
 
@@ -26,7 +26,7 @@ const Booking = () => {
                 </blockquote>
             </div>
             <div className="ml-5 col-5 mt-5 text-center bg-white text-dark rounded" style={{height:"400px"}}>
-                <form>
+                <form onSubmit={handleClick}> 
                     <div className="form-group">
                         <label htmlFor="Origin">Origin</label>
                         <input onChange={(e)=>setValidate(e.target.value)} type="text" className="form-control" id="Origin" placeholder="Dhaka" value={validate} required/>
@@ -46,11 +46,8 @@ const Booking = () => {
                         </div>
                     </div>
                    
-                    <button type="submit" onClick={handleClick} className="btn btn-warning">Booking now</button>
+                    <button type="submit"  className="btn btn-warning">Start Booking</button>
                 </form>
-                
-
-
 
             </div>
         </div>

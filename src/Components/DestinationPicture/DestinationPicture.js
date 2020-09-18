@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {useHistory } from 'react-router-dom';
 import '../Header/Header.css'
 
@@ -7,7 +7,7 @@ const DestinationPicture = (props) => {
     
 
     let history = useHistory();
-    const {id, name, destination, image} = props.dest
+    const {id, name, image} = props.dest
 
     function handleClick(id) {
         history.push(`/booking/${id}`);
