@@ -21,7 +21,7 @@ const DestinationPicture = (props) => {
     return (
         
             <div className='col mt-5'>     
-                     <h1 onClick={()=>handleClick(id)}className='picture float-left' id='pictureOne' style={picStyle}>{name}</h1>     
+                     <h1 onClick={()=>handleClick(id)}c lassName='picture float-left' id='pictureOne' style={picStyle}>{name}</h1>     
             </div>
             
         

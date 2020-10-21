@@ -54,9 +54,12 @@ function LogIn() {
 
   // facebook log in
   const fBLogin = () => {
+
     handleFBLogin()
       .then(res => {
+        console.log(res)
         handleResponse(res, true)
+        
 
       })
 
@@ -64,10 +67,11 @@ function LogIn() {
   // redirect function
   const handleResponse = (res, redirect) => {
     setUser(res);
-    setLoggedInUser(res);
+    console.log("res", res.email)
+    setLoggedInUser({...res});
+    
     if (redirect) {
       history.replace(from);
-
     }
   }
   // email/name/password validation
@@ -77,7 +81,6 @@ function LogIn() {
     if (e.target.name === 'email') {
       isFieldValid = /\S+@\S+.\S+/.test(e.target.value)
       !isFieldValid && alert("format = demo@example.com")
-
     }
     if (e.target.name === "password") {
       const isPasswordValid = e.target.value.length > 6;

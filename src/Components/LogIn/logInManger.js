@@ -33,14 +33,19 @@ export const handleFBLogin = () =>{
         const fbProvider = new firebase.auth.FacebookAuthProvider();
      return firebase.auth().signInWithPopup(fbProvider)
       .then(result => {
+
         const user = result.user;
         user.success = true;
         user.name = result.user.displayName;
         // user.email = result.user.email;
+        console.log(result)
+        
         
         
         return user;
-      }).catch(error => {
+      })
+     
+      .catch(error => {
         const errorMessage = error.message;
         const email = error.email;
         console.log(email)

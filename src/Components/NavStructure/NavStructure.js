@@ -32,6 +32,8 @@ const NavStructure = () => {
                             {
                             loggedInUser.email? <h5 className="nav-link text-dark">{loggedInUser.name}</h5> : <Link to="/login"><button className="ml-5 btn btn-warning text-dark" href="#">Log In</button></Link>
                             }
+
+                            
                         </li> 
                         <li className="nav-item">
                         <button className="ml-5 btn btn-warning text-dark" onClick={()=>setLoggedInUser({})}>Sign Out</button>
