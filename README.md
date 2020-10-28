@@ -25,4 +25,6 @@
   <li>User can view nearby hotels that he/she selected and google map</li>
   <li>User can see his/her data through context api</li>
 </ul>
+<h2>My Resume</h2>
+<p>https://drive.google.com/file/d/1tKQ9vvp55DTCyJL8TqG-iB6dS76GnLUU/view</p>
 
